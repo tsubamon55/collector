@@ -4,6 +4,8 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy.orm import DeclarativeBase
 
+from config import conf
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s %(levelname)s %(name)s %(message)s",
@@ -11,10 +13,10 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-username = "collector"
-password = "z9JLmSAK9BHMn0Z5IV7UlkdjT9T-R1_JsSXxwadg_KU"
-host = "localhost"
-database = "collector"
+username = conf["db"]["username"]
+password = conf["db"]["password"]
+host = conf["db"]["host"]
+database = conf["db"]["database"]
 
 engine = create_engine(f'mysql+pymysql://{username}:{password}@{host}/{database}?charset=utf8mb4')
 session = Session(bind=engine)

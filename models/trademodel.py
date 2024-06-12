@@ -14,4 +14,5 @@ class TradeModel(Base):
     symbol: Mapped[str] = mapped_column(String(15))
     timestamp: Mapped[DateTime] = mapped_column(DateTime)
 
+
 Base.metadata.create_all(bind=engine)

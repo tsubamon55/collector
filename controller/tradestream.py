@@ -2,7 +2,7 @@ import json
 import logging
 from datetime import datetime
 
-from stream.base import BaseWebsocketClient
+from controller.base_stream import BaseWebsocketClient
 from models.base import session
 from models.trademodel import TradeModel
 

@@ -1,6 +1,6 @@
 import asyncio
 
-from stream.tradestream import TradeStream
+from controller.tradestream import TradeStream
 
 
 async def main():

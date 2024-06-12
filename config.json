@@ -1,6 +1,14 @@
 {
-  "trade": {
-    "uri": "wss://api.coin.z.com/ws/public/v1",
-    "tablename": "trade"
+  "db": {
+    "username": "collector",
+    "password": "8McHRbKSKu4CVsXTXVUd9SVzNY8WhTbEZfg8LMIEeEQ",
+    "host": "localhost",
+    "database": "collector"
+  },
+  "tasks": {
+    "trade": {
+      "uri": "wss://api.coin.z.com/ws/public/v1",
+      "tablename": "trade"
+    }
   }
 }
