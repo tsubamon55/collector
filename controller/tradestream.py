@@ -29,9 +29,10 @@ class TradeStream(BaseWebsocketClient):
 
     async def onmessage(self, message):
         message_json = message.json()
+        timestamp = datetime.fromisoformat(message_json["timestamp"].replace("Z", "+00:00"))
         session.add(TradeModel(
             symbol=message_json["symbol"], price=float(message_json["price"]), side=message_json["side"],
-            timestamp=datetime.fromisoformat(message_json["timestamp"]), channel=message_json["channel"],
+            timestamp=timestamp, channel=message_json["channel"],
             size=float(message_json["size"]),
         ))
         session.commit()
