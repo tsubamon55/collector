@@ -14,5 +14,8 @@ class TradeModel(Base):
     symbol: Mapped[str] = mapped_column(String(15))
     timestamp: Mapped[DateTime] = mapped_column(DateTime)
 
+    def __repr__(self):
+        return f'<TradeModel: {self.id}, {self.channel}, {self.price}, {self.side}, {self.symbol}, {self.timestamp}>'
+
 
 Base.metadata.create_all(bind=engine)

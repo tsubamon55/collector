@@ -22,7 +22,8 @@ class TradeStream(BaseWebsocketClient):
         message = {
             "command": "subscribe",
             "channel": "trades",
-            "symbol": "BTC_JPY"
+            "symbol": "BTC_JPY",
+            "option": "TAKER_ONLY"
         }
         await ws.send(json.dumps(message))
         logger.info(f"connected | message: {message}")
