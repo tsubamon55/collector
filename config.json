@@ -1,0 +1,6 @@
+{
+  "trade": {
+    "uri": "wss://api.coin.z.com/ws/public/v1",
+    "tablename": "trade"
+  }
+}
